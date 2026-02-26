@@ -1,4 +1,4 @@
-# Olá, eu sou o Jeff Queiroz 👋
+# Hi, I'm Jeff Queiroz 👋 🇧🇷
 
 ### Creator Web3 Dev |  Medical Studyng | Ceo @Euvouserdoutor
 
