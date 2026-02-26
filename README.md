@@ -2,6 +2,8 @@
 
 ### Creator Web3 Dev |  Medical Studyng | Ceo @Euvouserdoutor
 
+---
+
 ### Medical Student & Scholarship Recipient @ UFMG | Onchain Builder | Web3 Explorer
 
 I am a medical student at the **Federal University of Minas Gerais (UFMG)**, where I study as a **scholarship recipient**. I am deeply passionate about the **art of healing** and the human side of medicine, while simultaneously embracing the **adventure of the digital world**.
