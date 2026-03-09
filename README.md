@@ -38,7 +38,8 @@ Although I am relatively new to the **Onchain ecosystem**, I am fully dedicated 
 ### 📫 Let's Connect!
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeffqueiroz-med)
 [![Instagram](https://img.shields.io/badge/instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/euvouserdoutor)
-[![Warpcast](https://img.shields.io/badge/Farcaster-UselessBoy-8a2be2?style=for-the-badge)](https://warpcast.com/uselessboy)
+[![Warpcast](https://img.shields.io/badge/Farcaster-UselessBoy-8a2be2?style=for-the-badge&logo=farcaster&logoColor=white)](https://warpcast.com/uselessboy)
+[![Base Network](https://img.shields.io/badge/Base-Profile-0052FF?style=for-the-badge&logo=base&logoColor=white)](https://base.app/profile/0x07b6a74fFC4b7aB17157f088A8CD82d8897d70C4)
 
 ---
 <p align="center">
