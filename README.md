@@ -78,7 +78,3 @@ ____
 <div align="center">
 <img src="https://github.com/AzmSurov/AzmSurov/raw/master/Rainbow.gif" alt="Rainbow GIF" width="100%"/>
 </div>
-
-<div align="center">
-<img src="https://github.com/AzmSurov/AzmSurov/raw/master/Rainbow.gif" alt="Rainbow GIF" width="100%"/>
-</div>
