@@ -38,7 +38,7 @@ ___
 
 📸 Euvouserdoutor: My personal brand and platform dedicated to documenting the medical school journey and inspiring future doctors.
 
-🎓 Currículo Lattes: Minha trajetória acadêmica oficial.
+___
 
 🛠 Tech Stack & Skills
 
