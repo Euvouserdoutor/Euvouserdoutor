@@ -67,6 +67,9 @@ AI Integration: Using artificial intelligence for image generation and project o
 <a href="https://base.app/profile/0x07b6a74fFC4b7aB17157f088A8CD82d8897d70C4"><img src="https://img.shields.io/badge/Base-Profile-0052FF?style=for-the-badge&logo=base&logoColor=white" alt="Base Network"/></a>
 </p>
 
+<p align="center">
+<strong>Base Wallet:</strong> <code>0x07b6a74ffc4b7ab17157f088a8cd82d8897d70c4</code>
+</p>
 
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Euvouserdoutor&layout=compact&theme=vision-friendly-dark" alt="Most Used Languages" />
