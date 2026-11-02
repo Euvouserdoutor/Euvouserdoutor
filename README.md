@@ -1,16 +1,17 @@
 <div align="center">
 
-# Jeff Queiroz
+<a href="https://jefferson.poke.site/"><img src="./assets/profile/hero.svg" alt="Jeff Queiroz — Medicine, Software, AI and Web3" width="100%" /></a>
+
+<br />
+
+<a href="https://jefferson.poke.site/"><img src="./assets/profile/button-website.svg" alt="Visit my personal website" width="235" /></a>
+<a href="https://farcaster.xyz/icekiss.eth"><img src="./assets/profile/button-farcaster.svg" alt="Follow me on Farcaster: icekiss.eth" width="235" /></a>
+<a href="https://www.linkedin.com/in/jeffqueiroz-med"><img src="./assets/profile/button-linkedin.svg" alt="Connect with me on LinkedIn" width="235" /></a>
+<a href="https://www.instagram.com/euvouserdoutor"><img src="./assets/profile/button-instagram.svg" alt="Visit my Instagram profile" width="235" /></a>
 
 **Medical Student at UFMG · Software Builder · AI & Web3**
 
-Building practical products at the intersection of **medicine, software, education and decentralized technology**.
-
-[![Euvouserdoutor](https://img.shields.io/badge/Medical%20%26%20Science%20Portal-Euvouserdoutor-0f172a?style=for-the-badge)](https://euvouserdoutor.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeffqueiroz-med)
-[![Farcaster](https://img.shields.io/badge/Farcaster-Follow-855DCD?style=for-the-badge)](https://farcaster.xyz/icekiss.eth)
-
-[Projects](#selected-work) · [Tech stack](#technical-toolkit) · [Principles](#how-i-build) · [Contact](#connect)
+*Building useful experiences where medicine meets technology.*
 
 </div>
 
@@ -18,116 +19,63 @@ Building practical products at the intersection of **medicine, software, educati
 
 ## Hello, I'm Jeff
 
-I'm a **medical student at the Federal University of Minas Gerais (UFMG), Brazil**, and an independent builder focused on **healthtech, applied AI, full-stack applications, automation and onchain experiences**.
+I'm a medical student at the **Federal University of Minas Gerais (UFMG)** and an independent builder interested in **healthtech, AI, full-stack software, and onchain products**.
 
-My work starts with a real problem and moves through product design, implementation, testing and iteration. I am especially interested in making complex workflows easier to understand and use — whether that's a medical study tool, clinical documentation software or a Web3 mini app.
+I turn ideas into practical tools, from clinical workflows and visual learning experiences to Web3 mini apps.
 
-**Em português:** estudo Medicina na UFMG e desenvolvo produtos digitais que conectam saúde, educação, inteligência artificial e tecnologia. Meu foco é transformar ideias em soluções práticas, com atenção à experiência do usuário e à segurança.
+## Featured Projects
 
-### What I focus on
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://github.com/Euvouserdoutor/CARDIO-TWIN-AI"><img src="./assets/profile/project-cardiotwin.svg" alt="CardioTwin AI public repository" width="100%" /></a>
 
-| Domain | Interests and practical work |
-| :--- | :--- |
-| **Digital health** | Clinical documentation flows, patient-record interfaces, information organization and human review |
-| **Applied AI** | Structured extraction, language-model integrations, document workflows and automation |
-| **Full-stack web** | React/Next.js applications, APIs, authentication, relational databases and deployment |
-| **Medical education** | Interactive visualization, scientific communication and accessible learning resources |
-| **Web3** | Farcaster mini apps, Base ecosystem integrations and digital collectible experiences |
+Experimental cardiovascular visualization and AI concepts.
+</td>
+<td width="50%" valign="top">
+<a href="https://euvouserdoutor.com"><img src="./assets/profile/project-euvouserdoutor.svg" alt="Euvouserdoutor medical education website" width="100%" /></a>
 
-## Selected work
+Medicine, science, and educational content.
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://github.com/Euvouserdoutor/DASH"><img src="./assets/profile/project-dash.svg" alt="DASH Crypto Pulse public repository" width="100%" /></a>
 
-### Healthtech and medical education
+Web dashboard for cryptocurrency data experiments.
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/Euvouserdoutor/WARPLET-XRAY"><img src="./assets/profile/project-xray.svg" alt="X-RAY Farcaster mini app public prototype" width="100%" /></a>
 
-**[Euvouserdoutor](https://euvouserdoutor.com)** · Public editorial portal
+Early Farcaster mini app prototype.
+</td>
+</tr>
+</table>
 
-A science, medicine, technology and education project focused on making research and complex topics understandable without losing scientific context. I work on its digital presence and editorial direction.
+<details>
+<summary><b>More projects in development</b></summary>
 
-**Anamnese Green** · Private development
+- **Clinical Pro** — clinical workflow and scheduling software.
+- **Anamnese Green** — AI-assisted medical documentation research.
+- **Fardrop** — Farcaster/Base mini app experiments.
 
-An AI-assisted clinical-documentation project exploring structured medical history templates, longitudinal consultation records, saved drafts and human-reviewed AI suggestions. The objective is to support clinicians' documentation workflow, not to automate medical decisions.
+These are private work-in-progress projects; their listed capabilities are not a statement of production readiness.
 
-**Clinical Pro** · Private development
+</details>
 
-A clinic-workflow software project exploring patient management, scheduling, clinical records and operational tools. Its modules are under development and evaluation; listing it here does not imply that every feature is production-ready.
+## Tech Stack
 
-**[CardioTwin AI](https://github.com/Euvouserdoutor/CARDIO-TWIN-AI)** · Public experimental repository
+**Code:** `TypeScript` · `JavaScript` · `Python`
 
-An exploration of cardiovascular interfaces, interactive anatomical visualization and AI-assisted educational/clinical concepts. It is an experimental software project, **not a clinically validated diagnostic or risk-prediction product**.
+**Web & Data:** `React` · `Next.js` · `PostgreSQL` · `Supabase` · `Vercel`
 
-### Web apps, data and onchain products
+**AI & Web3:** `Gemini` · `Automation` · `Base` · `Farcaster`
 
-**[DASH Crypto Pulse](https://github.com/Euvouserdoutor/DASH)** · Public repository
+## What Matters to Me
 
-A cryptocurrency portfolio-monitoring dashboard built with Next.js and TypeScript. It explores manual position tracking, market-price integration and protected read-only account-data flows. Portfolio calculations and third-party data should not be treated as audited financial records.
+**Useful products** · **Good design** · **Reliable code** · **Privacy** · **Continuous learning**
 
-**Fardrop** · Private development
-
-A Farcaster/Base mini app exploring digital collectibles, tasks, points and onchain participation. The implementation and availability of individual features may change as the project evolves.
-
-**[X-RAY / Farcaster mini app experiment](https://github.com/Euvouserdoutor/WARPLET-XRAY)** · Public prototype repository
-
-An early Farcaster mini app experiment. Its public README currently contains starter-template documentation, so it should not be interpreted as evidence of a finished NFT-generation product.
-
-<sub>**Status transparency:** These entries include public projects, experiments and private work in progress. Repository descriptions are not proof of public availability, production readiness, security certification or clinical validation.</sub>
-
-## Technical toolkit
-
-<div align="center">
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-20232A?style=flat-square&logo=javascript)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react)
-![Next.js](https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=nextdotjs&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-18181B?style=flat-square&logo=supabase)
-![Vercel](https://img.shields.io/badge/Vercel-18181B?style=flat-square&logo=vercel)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-
-</div>
-
-| Layer | Tools and areas of experience |
-| :--- | :--- |
-| **Frontend** | React, Next.js, TypeScript, responsive UI and component-based design |
-| **Backend & data** | Server-side APIs, PostgreSQL, Supabase, authentication and access control |
-| **AI** | Gemini integrations, structured outputs, extraction and validation workflows |
-| **Delivery** | Git, GitHub, CI checks, Vercel and debugging production issues |
-| **Web3** | Base, Farcaster, wallet-connected experiences and NFT concepts |
-| **Learning workflows** | Medical visualizations, study materials and educational product design |
-
-*These are tools and domains I use or actively explore, not a claim of advanced expertise in every item.*
-
-## How I build
-
-1. **Understand the user and the real constraint.** Define the problem before choosing a stack or model.
-2. **Build a focused, testable version.** Favor usable workflows over feature lists.
-3. **Validate behavior, not just appearance.** Review edge cases, data flow, errors and access boundaries.
-4. **Keep sensitive data protected.** Treat authentication, authorization, secrets and privacy as core product requirements.
-5. **Iterate with evidence.** Use tests, feedback and observable results to guide changes.
-
-### Responsible AI in healthcare
-
-I am interested in AI as an aid for organizing and reviewing information, **not as a replacement for professional clinical judgment**. Clinical software requires careful evaluation, appropriate privacy controls and human oversight before use with real patient data. Experimental demos are not clinical certifications.
-
-## Currently exploring
-
-- More reliable AI-assisted documentation and structured clinical information.
-- Interactive approaches to studying medicine, anatomy and scientific evidence.
-- Better product engineering: testing, security, performance and deployment.
-- User-centered experiences for Farcaster and the Base ecosystem.
-
-## Connect
-
-I'm open to thoughtful conversations and collaborations around **healthtech, AI, medical education, web development and Web3**.
-
-| Channel | Link |
-| :--- | :--- |
-| **Science & medical education** | [euvouserdoutor.com](https://euvouserdoutor.com) |
-| **Personal website** | [jefferson.poke.site](https://jefferson.poke.site/) |
-| **LinkedIn** | [Jeff Queiroz](https://www.linkedin.com/in/jeffqueiroz-med) |
-| **Instagram** | [@euvouserdoutor](https://www.instagram.com/euvouserdoutor) |
-| **Farcaster** | [icekiss.eth](https://farcaster.xyz/icekiss.eth) |
-| **Base** | [Onchain profile](https://base.app/profile/0x07b6a74fFC4b7aB17157f088A8CD82d8897d70C4) |
+> Health-related software shown here is experimental unless explicitly stated otherwise. It is not a substitute for professional clinical judgment.
 
 ---
 
@@ -135,6 +83,8 @@ I'm open to thoughtful conversations and collaborations around **healthtech, AI,
 
 **Medicine × Software × AI × Web3**
 
-<sub>Last reviewed: November 2026 · Portfolio and project descriptions evolve over time.</sub>
+[Personal Website](https://jefferson.poke.site/) · [Medical Education](https://euvouserdoutor.com) · [Farcaster](https://farcaster.xyz/icekiss.eth) · [Base](https://base.app/profile/0x07b6a74fFC4b7aB17157f088A8CD82d8897d70C4)
+
+<sub>Designed with self-hosted SVG assets — no external badge or stats services.</sub>
 
 </div>
