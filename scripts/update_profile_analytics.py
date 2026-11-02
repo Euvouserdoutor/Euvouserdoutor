@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate local SVG analytics from public GitHub repository metadata."""
+"""Render GitHub profile analytics from public GitHub API data only."""
 
 import json
 import os
@@ -7,130 +7,179 @@ from collections import Counter
 from datetime import datetime, timedelta, timezone
 from html import escape
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 USERNAME = "Euvouserdoutor"
 OUTPUT = Path(__file__).resolve().parents[1] / "assets" / "analytics"
 
 
-def public_repositories():
+def api_json(url):
     token = os.environ.get("GITHUB_TOKEN", "")
     headers = {
-        "User-Agent": "profile-public-analytics/1.0",
+        "User-Agent": "euvouserdoutor-profile-analytics/2.0",
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
+    with urlopen(Request(url, headers=headers), timeout=30) as response:
+        return json.load(response)
+
+
+def public_repositories():
     repos = []
-    page = 1
-    while True:
-        endpoint = f"https://api.github.com/users/{USERNAME}/repos?type=owner&per_page=100&page={page}"
-        with urlopen(Request(endpoint, headers=headers), timeout=25) as response:
-            batch = json.load(response)
+    for page in range(1, 22):
+        url = f"https://api.github.com/users/{USERNAME}/repos?type=owner&per_page=100&page={page}"
+        batch = api_json(url)
         if not isinstance(batch, list):
-            raise ValueError("GitHub did not return a repository list")
+            raise ValueError("GitHub repository response must be a list")
         repos.extend(
-            r for r in batch
-            if r.get("owner", {}).get("login", "").lower() == USERNAME.lower()
-            and r.get("private") is False
+            item for item in batch
+            if item.get("owner", {}).get("login", "").lower() == USERNAME.lower()
+            and item.get("private") is False
         )
         if len(batch) < 100:
-            break
-        page += 1
-        if page > 20:
-            raise ValueError("Unexpected pagination length")
-    return repos
+            return repos
+    raise ValueError("Repository pagination exceeded the supported limit")
 
 
-def svg_frame(title, subtitle, inner, width, height, description):
+def search_total(query):
+    """Read public GitHub search total without downloading item descriptions."""
+    try:
+        result = api_json(
+            "https://api.github.com/search/issues?q=" + quote(query, safe="") + "&per_page=1"
+        )
+    except (HTTPError, URLError, TimeoutError) as exc:
+        print(f"GitHub search unavailable for '{query}': {type(exc).__name__}")
+        return None
+    count = result.get("total_count")
+    if result.get("incomplete_results") is True or not isinstance(count, int):
+        return None
+    return count
+
+
+def frame(title, subtitle, body, description):
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">'
-        f'<title id="title">{escape(title)}</title><desc id="desc">{escape(description)}</desc>'
-        f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="8" '
-        'fill="#0d1117" stroke="#30363d"/>'
-        f'<text x="24" y="31" fill="#e6edf3" font-family="Arial,Helvetica,sans-serif" '
-        f'font-size="18" font-weight="700">{escape(title)}</text>'
-        f'<text x="{width-25}" y="29" text-anchor="end" fill="#8b949e" '
+        '<svg xmlns="http://www.w3.org/2000/svg" width="520" height="312" '
+        'viewBox="0 0 520 312" role="img" aria-labelledby="title desc">'
+        f'<title id="title">{escape(title)}</title>'
+        f'<desc id="desc">{escape(description)}</desc>'
+        '<rect x="1" y="1" width="518" height="310" rx="8" fill="#071027" '
+        'stroke="#52708e" stroke-width="1.5"/>'
+        f'<text x="22" y="32" fill="#3db5ff" font-family="Arial,Helvetica,sans-serif" '
+        f'font-size="21" font-weight="700">{escape(title)}</text>'
+        f'<text x="497" y="32" text-anchor="end" fill="#a1b3ca" '
         f'font-family="Arial,Helvetica,sans-serif" font-size="11">{escape(subtitle)}</text>'
-        f'<path d="M24 47H{width-24}" stroke="#30363d"/>' + inner + '</svg>\n'
+        '<path d="M22 48H498" stroke="#28405e"/>'
+        + body
+        + "</svg>\n"
     )
 
 
-def make_cards(repos, today=None):
-    now = today or datetime.now(timezone.utc)
+def make_cards(repos, now=None, merged_prs=None, opened_issues=None):
+    now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=30)
-    total = len(repos)
-    originals = sum(not r.get("fork", False) for r in repos)
-    stars = sum(int(r.get("stargazers_count") or 0) for r in repos)
+    originals = sum(not item.get("fork", False) for item in repos)
+    stars = sum(int(item.get("stargazers_count") or 0) for item in repos)
     active = 0
-    for r in repos:
-        pushed = r.get("pushed_at")
+    for item in repos:
+        pushed = item.get("pushed_at")
         if pushed:
             try:
                 active += datetime.fromisoformat(pushed.replace("Z", "+00:00")) >= cutoff
-            except (ValueError, TypeError):
-                continue
+            except (TypeError, ValueError):
+                pass
+
     stamp = now.strftime("%Y-%m-%d")
-    info = [
-        (total, "Public repositories", 28),
-        (originals, "Original repositories", 218),
-        (stars, "Repository stars", 406),
-        (active, "Updated in 30 days", 576),
+    metrics = [
+        ("Public repositories", len(repos)),
+        ("Original projects", originals),
+        ("Repository stars", stars),
+        ("Merged public PRs", merged_prs),
+        ("Public issues opened", opened_issues),
+        ("Updated in 30 days", active),
     ]
-    stats_rows = ''.join(
-        f'<text x="{x}" y="99" fill="#58a6ff" font-family="Arial,Helvetica,sans-serif" '
-        f'font-size="35" font-weight="700">{value}</text>'
-        f'<text x="{x}" y="128" fill="#b1bac4" font-family="Arial,Helvetica,sans-serif" '
-        f'font-size="13">{escape(label)}</text>'
-        for value, label, x in info
-    )
-    stats = svg_frame(
-        "GitHub Analytics", f"Public repos · {stamp}", stats_rows, 760, 164,
-        f"{total} public repositories; {originals} originals; {stars} stars; "
-        f"{active} repos updated in the last 30 days as of {stamp}.",
+    rows = []
+    for i, (label, value) in enumerate(metrics):
+        y = 85 + i * 39
+        number = "N/A" if value is None else str(value)
+        rows.append(
+            f'<circle cx="29" cy="{y-5}" r="5" fill="#3db5ff" fill-opacity=".9"/>'
+            f'<text x="44" y="{y}" fill="#cad7e8" font-family="Arial,Helvetica,sans-serif" '
+            f'font-size="15">{escape(label)}</text>'
+            f'<text x="490" y="{y}" text-anchor="end" fill="#ffffff" '
+            f'font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700">'
+            f'{escape(number)}</text>'
+        )
+    stats = frame(
+        "My GitHub Statistics", stamp, "".join(rows),
+        "; ".join(f"{label}: {value if value is not None else 'unavailable'}"
+                  for label, value in metrics) + ". Public data only."
     )
 
-    langs = Counter(r.get("language") for r in repos if r.get("language"))
-    top = langs.most_common(5)
+    counts = Counter(item.get("language") for item in repos if item.get("language"))
+    top = counts.most_common(5)
+    other = sum(counts.values()) - sum(c for _, c in top)
+    if other:
+        top.append(("Other", other))
     colors = {
-        "TypeScript": "#3178c6", "JavaScript": "#f1e05a", "Python": "#3572a5",
-        "Go": "#00ADD8", "CSS": "#563d7c",
+        "TypeScript": "#8461ed", "JavaScript": "#f1e05a", "Python": "#3572a5",
+        "Go": "#00add8", "CSS": "#d26ac2", "Other": "#8b949e",
     }
-    maximum = max((v for _, v in top), default=1)
-    lang_rows = ''
-    for i, (language, count) in enumerate(top):
-        y = 87 + 29 * i
-        width = max(12, round(423 * count / maximum))
-        color = colors.get(language, "#58a6ff")
-        lang_rows += (
-            f'<text x="27" y="{y+1}" fill="#c9d1d9" font-family="Arial,Helvetica,sans-serif" '
-            f'font-size="13">{escape(language)}</text>'
-            f'<rect x="142" y="{y-11}" width="423" height="13" rx="4" fill="#21262d"/>'
-            f'<rect x="142" y="{y-11}" width="{width}" height="13" rx="4" fill="{color}"/>'
-            f'<text x="578" y="{y+1}" fill="#8b949e" font-family="Arial,Helvetica,sans-serif" '
-            f'font-size="12">{count} {"repo" if count == 1 else "repos"}</text>'
+    palette = ["#8461ed", "#f1e05a", "#3572a5", "#00add8", "#d26ac2", "#8b949e"]
+    count_all = sum(counts.values())
+    body = [
+        '<text x="22" y="75" fill="#9cacc5" font-family="Arial,Helvetica,sans-serif" '
+        'font-size="12">Primary language per public repository</text>'
+    ]
+    if count_all:
+        start = 23.0
+        for i, (language, count) in enumerate(top):
+            color = colors.get(language, palette[i % len(palette)])
+            width = 474.0 * count / count_all
+            body.append(
+                f'<rect x="{start:.2f}" y="90" width="{width:.2f}" height="18" fill="{color}"/>'
+            )
+            start += width
+        for i, (language, count) in enumerate(top):
+            y = 140 + i * 27
+            color = colors.get(language, palette[i % len(palette)])
+            pct = 100.0 * count / count_all
+            body.extend([
+                f'<circle cx="29" cy="{y-5}" r="5.5" fill="{color}"/>',
+                f'<text x="44" y="{y}" fill="#d4e0ed" font-family="Arial,Helvetica,sans-serif" '
+                f'font-size="14">{escape(language)}</text>',
+                f'<text x="492" y="{y}" text-anchor="end" fill="#ffffff" '
+                f'font-family="Arial,Helvetica,sans-serif" font-size="14">'
+                f'{count} repos ({pct:.1f}%)</text>',
+            ])
+    else:
+        body.append(
+            '<text x="22" y="132" fill="#9cacc5" font-family="Arial" '
+            'font-size="15">No primary language data available.</text>'
         )
-    lang_rows += (
-        '<text x="24" y="236" fill="#8b949e" font-family="Arial,Helvetica,sans-serif" '
-        'font-size="10.5">Repositories without a detected language are omitted. '
-        'Based on GitHub API metadata.</text>'
+    language_card = frame(
+        "Programming Languages", f"{count_all} classified repos", "".join(body),
+        "; ".join(f"{language}: {count} repositories" for language, count in top)
+        or "No primary languages identified."
     )
-    languages = svg_frame(
-        "Primary Languages", "By public repository count", lang_rows, 760, 248,
-        "; ".join(f"{lang}: {count} repos" for lang, count in top) or "No language metadata detected.",
-    )
-    return {"public-stats.svg": stats, "primary-languages.svg": languages}
+    return {"public-stats.svg": stats, "primary-languages.svg": language_card}
 
 
 def main():
     repos = public_repositories()
-    cards = make_cards(repos)
+    merged_prs = search_total(f"author:{USERNAME} is:pr is:merged is:public")
+    opened_issues = search_total(f"author:{USERNAME} is:issue is:public")
+    cards = make_cards(repos, merged_prs=merged_prs, opened_issues=opened_issues)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     for name, card in cards.items():
         (OUTPUT / name).write_text(card, encoding="utf-8")
-    print(f"Updated {len(cards)} public GitHub SVG cards from {len(repos)} public repositories")
+    print(
+        f"Updated {len(cards)} SVG cards from {len(repos)} public GitHub repositories. "
+        f"Merged public PRs: {merged_prs}; public issues: {opened_issues}"
+    )
 
 
 if __name__ == "__main__":

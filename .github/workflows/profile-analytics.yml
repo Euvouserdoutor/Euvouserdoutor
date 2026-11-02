@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Test SVG generator
+        run: python -m unittest discover -s tests -v
+
       - name: Render public GitHub stats
         env:
           GITHUB_TOKEN: ${{ github.token }}
