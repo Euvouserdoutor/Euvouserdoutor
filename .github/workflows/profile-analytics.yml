@@ -1,0 +1,51 @@
+name: Profile GitHub Analytics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - scripts/update_profile_analytics.py
+      - .github/workflows/profile-analytics.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-github-analytics
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    if: github.repository == 'Euvouserdoutor/Euvouserdoutor'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Render public GitHub stats
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/update_profile_analytics.py
+
+      - name: Commit refreshed cards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/analytics/public-stats.svg assets/analytics/primary-languages.svg
+          if git diff --cached --quiet; then
+            echo 'No stats changes.'
+            exit 0
+          fi
+          git commit -m 'chore(profile): refresh public GitHub analytics [skip ci]'
+          git push origin HEAD:main
