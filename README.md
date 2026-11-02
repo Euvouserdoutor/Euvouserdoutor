@@ -32,9 +32,11 @@ ___
 
 ### 🚀 Projects in Development
   
-* **[X-RAY](https://warpcast.com/uselessboy):** A Farcaster-native mini-app that leverages AI to generate unique X-Ray styled NFTs from profile pictures.
+* **[X-RAY](https://warpcast.com/uselessboy):** A Farcaster-native mini-app that leverages AI to generate unique X-Ray styled NFTs from profile pictures. [View source code](https://github.com/Euvouserdoutor/WARPLET-XRAY).
 
 * **[Euvouserdoutor](https://www.instagram.com/euvouserdoutor):** My personal brand and platform dedicated to documenting the medical school journey and inspiring future doctors.
+
+* **[CardioTwin AI](https://github.com/Euvouserdoutor/CARDIO-TWIN-AI):** An open-source cardiovascular visualization and AI project.
 
 ___
 
