@@ -1,141 +1,61 @@
-<div align="center">
-
-<a href="https://jefferson.poke.site/"><img src="./assets/profile/hero.svg" alt="Jeff Queiroz — Medicine, Software, AI and Web3" width="100%" /></a>
-
-<h3>Medical Student at UFMG · AI &amp; Software Builder</h3>
-
-<p><strong>Turning ideas into useful products.</strong></p>
-<p>Medicine × Artificial Intelligence × Software × Web3</p>
+<h1 align="center">Hi, I'm Jeff Queiroz</h1>
 
 <p align="center">
-  <a href="https://jefferson.poke.site/" title="Personal website"><img src="./assets/profile/logo-website.svg" alt="Personal website" width="54" height="54" /></a>&nbsp;&nbsp;
-  <a href="https://farcaster.xyz/icekiss.eth" title="Farcaster — icekiss.eth"><img src="./assets/profile/logo-farcaster.svg" alt="Farcaster" width="54" height="54" /></a>&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/jeffqueiroz-med" title="LinkedIn — Jeff Queiroz"><img src="./assets/profile/logo-linkedin.svg" alt="LinkedIn" width="54" height="54" /></a>&nbsp;&nbsp;
-  <a href="https://www.instagram.com/euvouserdoutor" title="Instagram — @euvouserdoutor"><img src="./assets/profile/logo-instagram.svg" alt="Instagram" width="54" height="54" /></a>
+  Medical student at <strong>UFMG</strong> · Full-stack development · AI · Web3
 </p>
 
-<p>
-<a href="#featured-projects">Explore Projects</a> ·
-<a href="#tech-stack">Tech Stack</a> ·
-<a href="#current-focus">Current Focus</a> ·
-<a href="#connect">Connect</a>
+<p align="center">
+  <a href="https://jefferson.poke.site/" title="Website"><img src="./assets/profile/logo-website.svg" alt="Website" width="44" height="44" /></a>&nbsp;&nbsp;
+  <a href="https://farcaster.xyz/icekiss.eth" title="Farcaster"><img src="./assets/profile/logo-farcaster.svg" alt="Farcaster" width="44" height="44" /></a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/jeffqueiroz-med" title="LinkedIn"><img src="./assets/profile/logo-linkedin.svg" alt="LinkedIn" width="44" height="44" /></a>&nbsp;&nbsp;
+  <a href="https://www.instagram.com/euvouserdoutor" title="Instagram"><img src="./assets/profile/logo-instagram.svg" alt="Instagram" width="44" height="44" /></a>&nbsp;&nbsp;
+  <a href="https://x.com/useleszboy" title="X / Twitter"><img src="./assets/profile/logo-x.svg" alt="X" width="44" height="44" /></a>
 </p>
 
-</div>
+### About me
 
----
+- Studying **Medicine at the Federal University of Minas Gerais (UFMG), Brazil**.
+- Building web applications, healthtech prototypes, and AI-assisted workflows.
+- Exploring **Farcaster / Base** integrations and developer tooling.
 
-## About Me
+### Projects
 
-I'm **Jeff Queiroz**, a medical student at the **Federal University of Minas Gerais (UFMG), Brazil**, and an independent software builder.
-
-**Healthtech** · **AI Engineering** · **Full-Stack Development** · **Web3**
-
-I turn complex problems into practical, well-designed digital experiences — from clinical workflows and medical education to AI tools and onchain products.
-
-## Featured Projects
-
-<p align="center"><em>Selected public projects and experiments.</em></p>
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/Euvouserdoutor/CARDIO-TWIN-AI"><img src="./assets/profile/project-cardiotwin.svg" alt="CardioTwin AI — public repository" width="100%" /></a>
-      <p><strong>CardioTwin AI</strong></p>
-      <p>Experimental cardiovascular visualization and AI research.</p>
-      <sub>Healthtech · AI · Visualization</sub>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://euvouserdoutor.com"><img src="./assets/profile/project-euvouserdoutor.svg" alt="Euvouserdoutor — medical education website" width="100%" /></a>
-      <p><strong>Euvouserdoutor</strong></p>
-      <p>Medical education, science communication, and digital learning.</p>
-      <sub>Medicine · Education · Technology</sub>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/Euvouserdoutor/DASH"><img src="./assets/profile/project-dash.svg" alt="DASH Crypto Pulse — public repository" width="100%" /></a>
-      <p><strong>DASH Crypto Pulse</strong></p>
-      <p>Exploring cryptocurrency data visualization and dashboards.</p>
-      <sub>Web Development · Data · Web3</sub>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/Euvouserdoutor/WARPLET-XRAY"><img src="./assets/profile/project-xray.svg" alt="Donut Factory — Farcaster mini app prototype" width="100%" /></a>
-      <p><strong>Donut Factory (Farcaster prototype)</strong></p>
-      <p>Experimental Farcaster mini app for personalized donut artwork.</p>
-      <sub>Farcaster · Base · React</sub>
-    </td>
-  </tr>
-</table>
-
-<details>
-<summary><strong>More Projects — Private Development</strong></summary>
-
-### Clinical Pro
-Software exploring clinical workflows, patient management, and scheduling.
-
-### Anamnese Green
-AI-assisted clinical documentation and structured medical histories.
-
-### Fardrop
-Farcaster/Base mini app exploring collectibles, tasks, and community participation.
-
-<sub>Projects are in development. Descriptions do not imply production readiness or clinical validation.</sub>
-
-</details>
-
-## Tech Stack
-
-**Languages:** `TypeScript` · `JavaScript` · `Python`
-
-**Frontend:** `React` · `Next.js` · `Responsive UI`
-
-**Backend & Data:** `PostgreSQL` · `Supabase` · `REST APIs`
-
-**Cloud & Development:** `Vercel` · `GitHub` · `GitHub Actions`
-
-**AI & Web3:** `Gemini` · `AI Automation` · `Base` · `Farcaster`
-
-## Current Focus
-
-| Area | What I'm Exploring |
+| Repository | What it explores |
 | :--- | :--- |
-| **AI Engineering** | Practical AI products and workflow automation |
-| **Medical Technology** | Clinical software and visual learning tools |
-| **Full-Stack Software** | Reliability, performance, accessibility, and product design |
-| **Onchain Products** | Farcaster mini apps and Base integrations |
+| [**CardioTwin AI**](https://github.com/Euvouserdoutor/CARDIO-TWIN-AI) | Cardiovascular visualization and AI research prototype |
+| [**DASH**](https://github.com/Euvouserdoutor/DASH) | Cryptocurrency data dashboards and visualizations |
+| [**Donut Factory**](https://github.com/Euvouserdoutor/WARPLET-XRAY) | Farcaster mini app and personalized artwork experiments |
+| [**Personal website source**](https://github.com/Euvouserdoutor/jefferson-poke-site-source) | Website source and frontend experiments |
+| [**Euvouserdoutor**](https://euvouserdoutor.com) | Medicine and science education website |
 
-## Engineering Principles
+### Languages & Tools
 
-**Build with purpose.** Solve real problems with usable products.
+**Languages** · `TypeScript` `JavaScript` `Python`
 
-**Design for people.** Make complex systems intuitive and accessible.
+**Frontend** · `React` `Next.js` `HTML` `CSS`
 
-**Validate before shipping.** Prioritize reliability, privacy, and security.
+**Backend & Data** · `Node.js` `PostgreSQL` `Supabase`
 
-**Keep improving.** Iterate with tests, evidence, and feedback.
+**Cloud & Tools** · `Git` `GitHub Actions` `Vercel`
 
-## Connect
+**AI & Web3** · `Gemini` `Farcaster` `Base`
+
+### GitHub Analytics
 
 <p align="center">
-  <a href="https://jefferson.poke.site/">Personal Website</a> ·
-  <a href="https://farcaster.xyz/icekiss.eth">Farcaster</a> ·
-  <a href="https://www.linkedin.com/in/jeffqueiroz-med">LinkedIn</a> ·
-  <a href="https://www.instagram.com/euvouserdoutor">Instagram</a> ·
-  <a href="https://euvouserdoutor.com">Medical Education</a> ·
-  <a href="https://base.app/profile/0x07b6a74fFC4b7aB17157f088A8CD82d8897d70C4">Base</a>
+  <a href="https://github.com/Euvouserdoutor?tab=repositories"><img src="./assets/analytics/public-stats.svg" alt="GitHub Analytics: public repositories, original projects, stars and recent updates" width="100%" /></a>
+  <a href="https://github.com/Euvouserdoutor?tab=repositories"><img src="./assets/analytics/primary-languages.svg" alt="Primary programming languages of public repositories" width="100%" /></a>
 </p>
+
+<sub>Real public-repository metadata, generated locally and refreshed by [GitHub Actions](.github/workflows/profile-analytics.yml). Private projects and private contributions are not included. Languages are based on each repository's primary language, not lines of code.</sub>
 
 ---
 
-<div align="center">
+<p align="center">
+  <a href="https://jefferson.poke.site/">Website</a> ·
+  <a href="https://euvouserdoutor.com">Medical Education</a> ·
+  <a href="https://farcaster.xyz/icekiss.eth">Farcaster</a> ·
+  <a href="https://x.com/useleszboy">X</a>
+</p>
 
-<h3>Medicine × Software × Artificial Intelligence × Web3</h3>
-
-<p><strong>Learn. Build. Test. Improve.</strong></p>
-
-<sub>Personal portfolio · Projects, research, and ongoing experiments.</sub>
-
-<p><sub>Healthcare-related experiments are not substitutes for validated clinical systems or professional judgment.</sub></p>
-
-</div>
+<sub>Health-related projects listed here are experimental unless explicitly stated otherwise; they are not clinical decision-making tools.</sub>
