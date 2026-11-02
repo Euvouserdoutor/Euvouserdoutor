@@ -60,9 +60,9 @@ I turn complex problems into practical, well-designed digital experiences — fr
       <sub>Web Development · Data · Web3</sub>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/Euvouserdoutor/WARPLET-XRAY"><img src="./assets/profile/project-xray.svg" alt="Farcaster mini app — public prototype" width="100%" /></a>
-      <p><strong>Farcaster Mini App Experiments</strong></p>
-      <p>Creative onchain prototypes and interactive mini apps.</p>
+      <a href="https://github.com/Euvouserdoutor/WARPLET-XRAY"><img src="./assets/profile/project-xray.svg" alt="Donut Factory — Farcaster mini app prototype" width="100%" /></a>
+      <p><strong>Donut Factory (Farcaster prototype)</strong></p>
+      <p>Experimental Farcaster mini app for personalized donut artwork.</p>
       <sub>Farcaster · Base · React</sub>
     </td>
   </tr>
