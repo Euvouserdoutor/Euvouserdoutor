@@ -3,13 +3,11 @@
 </div>
 
 <h1 align="center">Hi, I'm Jeff Queiroz 👋🇧🇷</h1>
-<p align="center">
-
 
 <h3 align="center">🩺 Medical Student | Web3 Explorer | Creator | CEO @Euvouserdoutor</h3>
 
 <p align="center">
-<img src="https://komarev.com/ghpvc/?username=UselessBoy&label=Profile%20Views&color=8a2be2&style=flat-square" alt="Views" />
+<img src="https://komarev.com/ghpvc/?username=Euvouserdoutor&label=Profile%20Views&color=8a2be2&style=flat-square" alt="Views" />
 </p>
 
 ___
